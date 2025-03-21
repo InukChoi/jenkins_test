@@ -30,6 +30,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/project
+      - setup_remote_docker: # 도커 인 도커 문제 해결
+          docker_layer_caching: true
       - run:
           name: Build Docker Image
           command: |
